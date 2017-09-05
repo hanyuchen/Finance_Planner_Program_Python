@@ -1,1 +1,2 @@
-# Info206_GroupEMuxuan Lyn, Hanyu Chen, Yu-Cheng Lin, Ayo Animashaun
+# Info206_GroupE
+Muxuan Lyu, Hanyu Chen, Yu-Cheng Lin, Ayo Animashaun
