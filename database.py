@@ -59,4 +59,4 @@ df['Others']=b9
 df.index=df['Date']
 df=df.drop('Date', axis=1)
 print (df)
-df.to_csv('fake_database.csv', sep='\t')
+df.to_csv('fake_database.csv', sep=',')
