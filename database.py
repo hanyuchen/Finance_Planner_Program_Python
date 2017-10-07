@@ -1,5 +1,6 @@
+import sys
+sys.path.insert(0, '/anaconda/lib/python3.6/site-packages')
 
-#!/bin/bash
 import pandas as pd #dataframe package
 import numpy as np #Python number processor
 import matplotlib.pyplot as plt # for plotting
@@ -58,5 +59,4 @@ df['Others']=b9
 df.index=df['Date']
 df=df.drop('Date', axis=1)
 print (df)
-
-chmod +x database.sh
+df.to_csv('fake_database.csv', sep='\t')
