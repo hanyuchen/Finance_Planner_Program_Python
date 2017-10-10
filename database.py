@@ -57,4 +57,4 @@ df['Loans']=b7
 df['House&Bills']=b8
 df['Others']=b9
 
-df.to_csv('fake_database.csv', sep=',')
+df.to_csv('fake_database.csv', sep=',', index=False)
