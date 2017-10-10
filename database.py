@@ -56,7 +56,5 @@ df['Travel']=b6
 df['Loans']=b7
 df['House&Bills']=b8
 df['Others']=b9
-df.index=df['Date']
-df=df.drop('Date', axis=1)
-print (df)
+
 df.to_csv('fake_database.csv', sep=',')
