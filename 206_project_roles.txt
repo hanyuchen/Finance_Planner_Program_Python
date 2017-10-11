@@ -1,0 +1,35 @@
+(Erica)
+Log-in function:
+Input (Enter Username:)
+Input (Enter password:)
+Try and except clause, also use regular expression to match pattern. 
+Show error for invalid password and username. 
+
+(YuCheng)
+Menu
+Print (1.Enter new expense, 2.Review expenses, 3.Visualize statement, 4.Give me some advice)
+Input(What would you like to do today?:)
+Raise exception if input is not an integer. 
+Raise exception when number is not in range. 
+
+(Muxuan and YuCheng)
+Ask for Income
+Ask for Expense
+Ask for Budget
+
+Put Income in Database
+Put Expense in Database
+Put Budget in Database
+
+(Ayo & Erica)
+Review Expense
+
+
+(Ayo)
+Visualize
+
+
+
+
+
+
