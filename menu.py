@@ -117,3 +117,26 @@ def add_budget(df,budget):
 	new_row = df[-1:].copy()
 	new_row['Budget'] = budget
 	new_row.to_csv('fake_database.csv', mode='a', header=False,index=False)
+
+
+def log_in():
+
+    # Let User input username & password
+    name = str(input("Please enter your username: "))
+    pw = str(input("Please enter your password: "))
+
+    # change data frame from series to list
+    username = df['User Name'].tolist()
+    password = df['Password'].tolist()
+
+    # Match user input data to database 
+    if name in username and pw in password:
+        print("Welcome!")
+
+    elif name not in username:
+        print("Wrong user name")
+
+    elif pw not in password:
+        print("Wrong password, the password pattern is ")
+
+log_in()
