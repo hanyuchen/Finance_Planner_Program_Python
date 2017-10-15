@@ -137,5 +137,5 @@ def log_in():
         print("Wrong user name")
 
     elif pw not in password:
-        print("Wrong password, the password pattern is ")
+        print("Wrong password")
 
