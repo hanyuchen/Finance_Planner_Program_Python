@@ -139,4 +139,3 @@ def log_in():
     elif pw not in password:
         print("Wrong password, the password pattern is ")
 
-log_in()
