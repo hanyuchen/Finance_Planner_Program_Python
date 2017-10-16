@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt # for plotting
 import seaborn as sns # for plotting and styling
 import datetime
 
-a1 = list(pd.date_range('20170901', periods=100))
+a1 = pd.date_range('20170901', periods=100)
 d1=['Ayo','Hanyu','Muxuan','Yucheng']*25
 d2=['ayoanimashaun@berkeley.edu','hanyu_chen@berkeley.edu','muxuan_lyu@berkeley.edu','yucheng.lin@berkeley.edu']*25
 d3=d1
