@@ -57,4 +57,4 @@ df['House&BillsSum']=df.groupby(['Name', 'Month']).House_BillsE.cumsum()
 df['OthersSum']=df.groupby(['Name', 'Month']).OthersE.cumsum()
 
 
-df.to_csv('fake_database.csv', sep=',', index=False)
+df.to_csv('fake_database.csv', sep=',', header=True, index=False)
