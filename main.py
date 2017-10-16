@@ -31,7 +31,6 @@ def log_in():
     return name
 
 def main_menu():
-
 	"""Prints the main menu, ranging from 1 to 4, which privides users with four possible operations.
 	   returns the menu index"""
 	print("What would you like to do today?\n1. Review past expenses\n2. Make a new entry\n3. Visualize my activies\n4. Give me some Advice\n5. Quit")
@@ -49,26 +48,7 @@ def main_menu():
 				return ans
 				break
 
-def return_menu():
-
-	"""Prints the return menu, ranging from 1 to 4, which privides users with four possible operations.
-	   returns the menu index"""
-	print("Back to Main menu:\n1. Review past expenses\n2. Make a new entry\n3. Visualize my activies\n4. Give me some Advice")
-	while True:
-		ans = input("Please enter the number: ")
-		try:
-			ans = int(ans)
-		except ValueError:
-			print("Not an integer. Please try again.")
-		else:
-			if ans not in range(1, 5):
-				print("Invalid option. Please try again.")
-				continue
-			else:
-				return ans
-				break
-
-# review expenses
+# Review expenses
 def ViewExpenseTable(Name,Date1,Date2):
     """"This function generates a table of all expenses between the two dates entered as arguments"""
     D1 = datetime.datetime.strptime(Date1, "%Y-%m-%d")
@@ -108,7 +88,7 @@ def ReviewExpense(Name,Category,Date1,Date2):
     else:
         raise ValueError("No records for Name, {0}".format(Name))
 
-# new entry
+# New entry
 def new_entry_index():
 	"""Returns the new entry index, ranging from 1-3"""
 	print("What would you like to add?\n1.Income\n2.Expenses\n3.Budget")
@@ -126,7 +106,7 @@ def new_entry_index():
 				return ans
 				break
 
-# if income:
+# Adding income:
 def request_income():
 	"""Returns the income value"""
 	while True:
@@ -146,7 +126,7 @@ def add_income(df,income):
 	new_row['Total Income'] = income
 	new_row.to_csv('fake_database.csv', mode='a', header=False,index=False)
 
-# if expenses:
+# Adding expenses:
 def request_expenses_index():
 	"""Returns the index, ranging from 1 to 9, of the expenses category."""
 	print("What kind of expense are you adding?\n1. Groceries\n2. Restaurants\n3. Clothes\n4. Entertainment\n5. E-devices\n6. Travel\n7. Loans\n8. Housing & Bills\n9. Others")
@@ -183,7 +163,7 @@ def add_expenses(df,index,expense):
 	new_row[expense_category] = expense
 	new_row.to_csv('fake_database.csv', mode='a', header=False,index=False)
 
-# if budget:
+# Adding budget:
 def request_budget():
 	"""Returns the budget value"""
 	while True:
