@@ -5,6 +5,7 @@ import pandas as pd #dataframe package
 import numpy as np #Python number processor
 import matplotlib.pyplot as plt # for plotting
 import seaborn as sns # for plotting and styling
+import datetime
 
 a1 = list(pd.date_range('20170901', periods=100))
 d1=['Ayo','Hanyu','Muxuan','Yucheng']*25
@@ -42,6 +43,7 @@ df['LoansE']=e7
 df['House&BillsE']=e8
 df['OthersE']=e9
 df['Budget']=b1
+df['Date'] = pd.to_datetime(df['Date'])
 
 df['GroceriesE']=(df['GroceriesE']).groupby(df['Name']).cumsum()
 df['RestaurantsE']=(df['RestaurantsE']).groupby(df['Name']).cumsum()
