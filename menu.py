@@ -120,15 +120,18 @@ def add_budget(df,budget):
 
 
 def log_in():
-
+    df = pd.read_csv('fake_database.csv')
+    name = ''
+    pw = ''
+    
+    # change data frame from series to list
+    username = df['User Name'].tolist()
+    password = df['Password'].tolist()
+    
     while (name not in username or pw not in password):
         # Let User input username & password
         name = str(input("Please enter your username: "))
         pw = str(input("Please enter your password: "))
-
-        # change data frame from series to list
-        username = df['User Name'].tolist()
-        password = df['Password'].tolist()
 
         # Match user input data to database 
         if name in username and pw in password:
@@ -139,4 +142,6 @@ def log_in():
 
         elif pw not in password:
             print("Wrong password")
+
+
 
