@@ -37,22 +37,24 @@ df['GroceriesE']=e1
 df['RestaurantsE']=e2
 df['ClothingE']=e3
 df['EntertainmentE']=e4
-df['E-devicesE']=e5
+df['E_devicesE']=e5
 df['TravelE']=e6
 df['LoansE']=e7
-df['House&BillsE']=e8
+df['House_BillsE']=e8
 df['OthersE']=e9
 df['Budget']=b1
 df['Date'] = pd.to_datetime(df['Date'])
+df['Month']=df['Date'].dt.to_period('M')
 
-df['GroceriesE']=(df['GroceriesE']).groupby(df['Name']).cumsum()
-df['RestaurantsE']=(df['RestaurantsE']).groupby(df['Name']).cumsum()
-df['ClothingE']=(df['ClothingE']).groupby(df['Name']).cumsum()
-df['EntertainmentE']=(df['EntertainmentE']).groupby(df['Name']).cumsum()
-df['E-devicesE']=(df['E-devicesE']).groupby(df['Name']).cumsum()
-df['TravelE']=(df['TravelE']).groupby(df['Name']).cumsum()
-df['LoansE']=(df['LoansE']).groupby(df['Name']).cumsum()
-df['House&BillsE']=(df['House&BillsE']).groupby(df['Name']).cumsum()
-df['OthersE']=(df['OthersE']).groupby(df['Name']).cumsum()
+df['GroceriesSum']= df.groupby(['Name', 'Month']).GroceriesE.cumsum()
+df['RestaurantsSum']=df.groupby(['Name', 'Month']).RestaurantsE.cumsum()
+df['ClothingSum']=df.groupby(['Name', 'Month']).ClothingE.cumsum()
+df['EntertainmentSum']=df.groupby(['Name', 'Month']).EntertainmentE.cumsum()
+df['E-devicesSum']= df.groupby(['Name', 'Month']).E_devicesE.cumsum()
+df['TravelSum']=df.groupby(['Name', 'Month']).TravelE.cumsum()
+df['LoansSum']=df.groupby(['Name', 'Month']).LoansE.cumsum()
+df['House&BillsSum']=df.groupby(['Name', 'Month']).House_BillsE.cumsum()
+df['OthersSum']=df.groupby(['Name', 'Month']).OthersE.cumsum()
+
 
 df.to_csv('fake_database.csv', sep=',', index=False)
