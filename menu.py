@@ -63,7 +63,7 @@ def add_income(df,income):
 # if expenses:
 def request_expenses_index():
 	"""Returns the index, ranging from 1 to 9, of the expenses category. """
-	print("What kind of expense are you adding?\n1. Grocery\n2. Restaurant\n3. Clothes\n4. Entertainment\n5. E-devices\n6. Travel\n7. Loans\n8. Housing & Bills\n9. Others")
+	print("What kind of expense are you adding?\n1. Groceries\n2. Restaurant\n3. Clothes\n4. Entertainment\n5. E-devices\n6. Travel\n7. Loans\n8. Housing & Bills\n9. Others")
 	while True:
 		ans = input("Please enter the number: ")
 		try:
@@ -94,7 +94,7 @@ def request_expenses(index):
 
 def add_expenses(df,index,expense):
 	"""Add the expenses to the database"""
-	expense_category = expense_index[str(index)]
+	expense_category = expense_dict[str(index)]
 	new_row = df[-1:].copy()
 	new_row[expense_category] = expense
 	new_row.to_csv('fake_database.csv', mode='a', header=False,index=False)
@@ -123,17 +123,17 @@ def log_in():
     df = pd.read_csv('fake_database.csv')
     name = ''
     pw = ''
-    
+
     # change data frame from series to list
     username = df['User Name'].tolist()
     password = df['Password'].tolist()
-    
+
     while (name not in username or pw not in password):
         # Let User input username & password
         name = str(input("Please enter your username: "))
         pw = str(input("Please enter your password: "))
 
-        # Match user input data to database 
+        # Match user input data to database
         if name in username and pw in password:
             print("Welcome!")
 
@@ -142,6 +142,3 @@ def log_in():
 
         elif pw not in password:
             print("Wrong password")
-
-
-
