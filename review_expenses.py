@@ -29,21 +29,19 @@ def ViewExpenseTable(Name,Date1,Date2):
     else:
         raise ValueError("No records for Name, {0}".format(Name))
 
+
 def ReviewExpense(Name,Category,Date1,Date2):
     """This function tells the user how much they have spent in a certain category over the dates given"""
     D1 = datetime.datetime.strptime(Date1, "%Y-%m-%d")
     D2 = datetime.datetime.strptime(Date2, "%Y-%m-%d")
     if D2<D1: #compares to see if the dates given are in the right order
         raise IndexError("Please enter a valid date range")
-    while Name in df[['Name']].values: #Checks if the Name argument is indeed in the Database
+    while Name in df[['Name']].values:#Checks if the Name argument is indeed in the Database 
         df1=df.loc[df['Name']==Name,['Date',Category]]
-        if [Date1,Date2] in df1[['Date']].values: #Check if dates given are in the main dataframe
-            df1.index=df1['Date'] #Indexes new dataframe by Dates
-            df1=df1.loc[Date1:Date2,]
-            df1=df1.drop('Date', axis=1)
-            t=(df1[Category].iloc[-1])-(df1[Category].iloc[0])#Calculates summed expenses by subtracting first row from last row
-            return ("Between {0} and {1}, you have spent ${2} on {3}.".format(Date1,Date2,t, Category[:-1]))
-        else:
-            raise IndexError("Your dates are not within the range of records") #Error message when dates given aren't in dataframe
+        df1.index=df1['Date'] #Indexes new dataframe by Dates
+        df1=df1.loc[Date1:Date2,]
+        df1=df1.drop('Date', axis=1)
+        t=df1[Category].sum()
+        return ("Between {0} and {1}, you have spent ${2} on {3}.".format(Date1,Date2,t, Category[:-1])) 
     else:
         raise ValueError("No records for Name, {0}".format(Name))
