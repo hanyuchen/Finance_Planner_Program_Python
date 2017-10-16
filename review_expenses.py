@@ -17,7 +17,7 @@ def ViewExpenseTable(Name,Date1,Date2):
         raise IndexError("Please enter a valid date range")
     uniquevalues = np.unique(df[['Name']].values)  #Creates an array of unique names of users
     while Name in uniquevalues: #Checks if the name passed into the function is in the database
-        df1=df.loc[df['Name']==Name,['Date','GroceriesE','RestaurantsE','ClothingE','EntertainmentE','E-devicesE','TravelE','LoansE','House&BillsE','OthersE']]
+        df1=df.loc[df['Name']==Name,['Date','GroceriesE','RestaurantsE','ClothingE','EntertainmentE','E_devicesE','TravelE','LoansE','House_BillsE','OthersE']]
         df1.index=df1['Date']  #Changes index to dates in a temporary dataframe
         df1=df1.loc[Date1:Date2,] #Indexes new dataframe by Dates
         df1=df1.drop('Date', axis=1)

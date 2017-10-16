@@ -50,10 +50,10 @@ df['GroceriesSum']= df.groupby(['Name', 'Month']).GroceriesE.cumsum()
 df['RestaurantsSum']=df.groupby(['Name', 'Month']).RestaurantsE.cumsum()
 df['ClothingSum']=df.groupby(['Name', 'Month']).ClothingE.cumsum()
 df['EntertainmentSum']=df.groupby(['Name', 'Month']).EntertainmentE.cumsum()
-df['E-devicesSum']= df.groupby(['Name', 'Month']).E_devicesE.cumsum()
+df['E_devicesSum']= df.groupby(['Name', 'Month']).E_devicesE.cumsum()
 df['TravelSum']=df.groupby(['Name', 'Month']).TravelE.cumsum()
 df['LoansSum']=df.groupby(['Name', 'Month']).LoansE.cumsum()
-df['House&BillsSum']=df.groupby(['Name', 'Month']).House_BillsE.cumsum()
+df['House_BillsSum']=df.groupby(['Name', 'Month']).House_BillsE.cumsum()
 df['OthersSum']=df.groupby(['Name', 'Month']).OthersE.cumsum()
 
 
